@@ -13,7 +13,10 @@
     	<a href="https://en.wikipedia.org/wiki/Django" class="external_link" id="link_to_wiki_page">
     	
         <div class="page-header">
-            <h1><a href="">Django Girls Blog</a></h1>
+        	{% if user.is_authenticated %}
+			    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+			{% endif %}
+            <h1><a href="{% url 'post_list' %}">Django Girls Blog</a></h1>
         </div>
 
         <div class="content container">
