@@ -1,7 +1,7 @@
 {% load staticfiles %}
 <html>
     <head>
-    	<title>Django Girls blog</title>
+    	<title>Django Girls blog made by Seonghwa</title>
 
     	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
@@ -10,15 +10,31 @@
 
     </head>
     <body>
-    	<a href="https://en.wikipedia.org/wiki/Django" class="external_link" id="link_to_wiki_page">
-    	
         <div class="page-header">
         	{% if user.is_authenticated %}
 			    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-			{% endif %}
-            <h1><a href="{% url 'post_list' %}">Django Girls Blog</a></h1>
+                <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
+                <p class="top-menu">Hello {{ user.username }}<small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
+            {% else %}
+                <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
+            {% endif %}
+            <h1>
+                <a href="{% url 'post_list' %}">Seonghwa's Blog made by Django</a>
+            </h1>
+            <div class="page-smallheader">
+                <a href="http://sounghwa777.blog.me">Naver Blog</a>
+                <a href="http://greenhair.pe.hu">Wordpress Blog</a>
+                <a href="https://www.facebook.com/Martian.Lee">Facebook</a>
+                <a href="https://martianlee.gitbooks.io/my-beautiful-soup-tutorial/content/">My Beautiful Soup Tutorial</a>
+                <a href="https://en.wikipedia.org/wiki/Django" class="external_link" id="link_to_wiki_page"> Django girls wikipedia </a>
+            </div>
         </div>
-
+        
+        <div class="post-header">
+            <a href="{% url 'post_list'%}">posts</a>
+            <a href="{% url 'post_list'%}">football</a>
+            <a href="{% url 'post_about_me'%}">about me</a>
+        </div>
         <div class="content container">
 		    <div class="row">
 		        <div class="col-md-8">

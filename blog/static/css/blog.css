@@ -1,13 +1,43 @@
 .page-header {
-    background-color: #ff9400;
+    background-color: #86DE86;
     margin-top: 0;
-    padding: 20px 20px 20px 40px;
+    padding: 20px 20px 10px 40px;
+    margin-bottom: 5;
 }
 
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
     font-size: 36pt;
     text-decoration: none;
+    margin-bottom: 20;
+}
+
+.page-smallheader {
+    padding: 10px 10px 10px 0px;
+    margin-bottom: 0;
+}
+
+.page-smallheader a{
+    background-color: #5ADE9A;
+    padding: 10px 10px 10px 10px;
+    margin-right: 5;
+    color: #ffffff;
+    font-size: 11pt;
+}
+
+.post-header{
+    display:block;
+    padding: 10px 10px 10px 40px;
+    font-size: 11pt;
+    margin-bottom: 10;
+}
+
+.post-header a{
+    background-color: #00CED1;
+    padding: 10px 10px 10px 10px;
+    margin-right: 5;
+    color: #ffffff;
+    font-size: 11pt;
 }
 
 .content {
@@ -44,4 +74,30 @@ h1, h2, h3, h4 {
 
 .post h1 a, .post h1 a:visited {
     color: #000000;
+}
+
+.post h1 a, .post h1 a:visited {
+    color: #000000;
+}
+
+.about-me{
+    padding: 10px 10px 10px 10px;
+    background-color: #AFEEEE;
+}
+.login-page{
+    padding: 10px 10px 10px 10px;
+    background-color: #AFEEEE;
+}
+
+.login-page table{
+    height: 70px;
+}
+
+.login-page input{
+    padding: 5px 5px 5px 5px;
+    border: none;
+    border-radius: 4px;
+}
+.login-page input:focus{
+    background-color: lightblue;
 }
