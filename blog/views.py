@@ -2,12 +2,15 @@ from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
-from .models import Post, Comment
+from .models import Post, Comment, Stocks, Leaguetable
 from .forms import PostForm, CommentForm
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
-    return render(request, 'blog/post_list.html', {'posts': posts})
+    stocks = Stocks.objects.filter().order_by('id')
+
+    leagueTable = Leaguetable.objects.filter().order_by('position')
+    return render(request, 'blog/post_list.html', {'posts': posts, 'leagueTable': leagueTable} )   
 
 def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
@@ -86,3 +89,28 @@ def comment_remove(request, pk):
     post_pk = comment.post.pk
     comment.delete()
     return redirect('post_detail', pk=post_pk)
+
+
+'''
+   model = Stocks
+        fields = ('date', 'trans','symbol','qty','price')
+'''
+
+def show_Stocks(request):
+    stocks = Stocks.objects.filter().order_by('id')
+    '''
+    date = get_object_or_404(date, pk=pk)
+    trans = get_object_or_404(, pk=pk)
+    trans = get_object_or_404(trans, pk=pk)
+    trans = get_object_or_404(trans, pk=pk)
+    trans = get_object_or_404(trans, pk=pk)
+    '''
+    return render(request, 'blog/post_list.html', {'stocks': stocks})
+
+def football_list(request):
+    leagueTable = Leaguetable.objects.filter().order_by('position')    
+    return render(request, 'blog/football_list.html', {'leagueTable': leagueTable} )   
+
+def home(request):
+    
+    return render(request, 'blog/home.html' )   
