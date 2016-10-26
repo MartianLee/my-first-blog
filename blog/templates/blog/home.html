@@ -1,116 +1,109 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-	<div class = "home">
-		<p> 이 화면은 홈 화면입니다. </p>
-		<p> 현재 블로그 포스팅 / EPL 랭킹 조회 기능을 제공합니다. </p>
-	</div>
 
-	블로그 기능 구현 진행도
+<!-- Banner -->
+	<section id="banner">
+		<div class="content">
+			<header>
+				<h1>Hi, I’m Seonghwa<br />
+				This is my blog</h1>
+				<p>made by Django Framework</p>
+				<p>안녕하세요? 성화의 블로그입니다.</p>
+			</header>
+			<p></p>
+			<br><br><br><br>
+			<ul class="actions">
+				<li><a href="{% url 'post_about_me'%}" class="button big">About me</a></li>
+			</ul>
+		</div>
+		<span class="image object">
+			{% load static %}
+			<img src="{% static 'images/image1.jpg' %}" alt="" />
+		</span>
+	</section>
+
+	<h2> To do </h2>
+	<table>
+		<tr>
+
+			<td><b>구현해야 하는 기능</b></td>
+			<td><b>구현 여부</b></td>
+			<td><b>비고</b></td>
+
+		</tr>
+		<tr>
+			<td>에디터, 페이지네이션</td>
+			<td>O</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>포스트에 태그, 이미지/파일 업로드 기능</td>
+			<td>X</td>
+			<td>CKEditor 문서 더 읽어보기</td>
+		</tr>
+		<tr>
+			<td>블로그 조금 더 이쁘게 커스터마이징하기ㅋ</td>
+			<td>X</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>서버에 cron tab 설치, 파서 실행시키기</td>
+			<td>X</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>쇼핑몰 앱 구상</td>
+			<td>X</td>
+			<td>페이지 에디팅, 결제모듈 공부</td>
+		</tr>
+		<tr>
+			<td>SCCC 홈페이지 개발</td>
+			<td>X</td>
+			<td>hustoj : php 공부</td>
+		</tr>
+	</table>
 	<div class="progress">
-	  <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 40%;">
-	    40%
+	  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 16%;">
+	    16.66%
 	  </div>
 	</div>
 
-	이거슨 점보트론
-	<div class="jumbotron">
-	  <h1>Hello, world!</h1>
-	  <p>This is Jumbotron</p>
-	  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
-	</div>
-
-	이거슨 경고
-	<div class="alert alert-success" role="alert">성공했다구</div>
-	<div class="alert alert-danger" role="alert">경고경고 조심하라구</div>
-
-	이거슨 드롭다운 버튼
-	<div class="row">
-	  <div class="col-lg-6">
-	    <div class="input-group">
-	      <div class="input-group-btn">
-	        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
-	        <ul class="dropdown-menu" role="menu">
-	          <li><a href="#">Action</a></li>
-	          <li><a href="#">Another action</a></li>
-	          <li><a href="#">Something else here</a></li>
-	          <li class="divider"></li>
-	          <li><a href="#">Separated link</a></li>
-	        </ul>
-	      </div><!-- /btn-group -->
-	      <input type="text" class="form-control" aria-label="...">
-	    </div><!-- /input-group -->
-	  </div><!-- /.col-lg-6 -->
-	  <div class="col-lg-6">
-	    <div class="input-group">
-	      <input type="text" class="form-control" aria-label="...">
-	      <div class="input-group-btn">
-	        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Action <span class="caret"></span></button>
-	        <ul class="dropdown-menu dropdown-menu-right" role="menu">
-	          <li><a href="#">Action</a></li>
-	          <li><a href="#">Another action</a></li>
-	          <li><a href="#">Something else here</a></li>
-	          <li class="divider"></li>
-	          <li><a href="#">Separated link</a></li>
-	        </ul>
-	      </div><!-- /btn-group -->
-	    </div><!-- /input-group -->
-	  </div><!-- /.col-lg-6 -->
-	</div><!-- /.row -->
-
-	이거슨 부트스트랩 네비게이션 바
-	<nav class="navbar navbar-default">
-	  <div class="container-fluid">
-	    <!-- Brand and toggle get grouped for better mobile display -->
-	    <div class="navbar-header">
-	      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-	        <span class="sr-only">Toggle navigation</span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	        <span class="icon-bar"></span>
-	      </button>
-	      <a class="navbar-brand" href="#">Brand</a>
-	    </div>
-
-	    <!-- Collect the nav links, forms, and other content for toggling -->
-	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	      <ul class="nav navbar-nav">
-	        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-	        <li><a href="#">Link</a></li>
-	        <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-	          <ul class="dropdown-menu" role="menu">
-	            <li><a href="#">Action</a></li>
-	            <li><a href="#">Another action</a></li>
-	            <li><a href="#">Something else here</a></li>
-	            <li class="divider"></li>
-	            <li><a href="#">Separated link</a></li>
-	            <li class="divider"></li>
-	            <li><a href="#">One more separated link</a></li>
-	          </ul>
-	        </li>
-	      </ul>
-	      <form class="navbar-form navbar-left" role="search">
-	        <div class="form-group">
-	          <input type="text" class="form-control" placeholder="Search">
-	        </div>
-	        <button type="submit" class="btn btn-default">Submit</button>
-	      </form>
-	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="#">Link</a></li>
-	        <li class="dropdown">
-	          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-	          <ul class="dropdown-menu" role="menu">
-	            <li><a href="#">Action</a></li>
-	            <li><a href="#">Another action</a></li>
-	            <li><a href="#">Something else here</a></li>
-	            <li class="divider"></li>
-	            <li><a href="#">Separated link</a></li>
-	          </ul>
-	        </li>
-	      </ul>
-	    </div><!-- /.navbar-collapse -->
-	  </div><!-- /.container-fluid -->
-	</nav>
+	<!-- Section -->
+		<section>
+			<header class="major">
+				<h2>Applications</h2>
+			</header>
+			<div class="features">
+				<article>
+					<span class="icon fa-diamond"></span>
+					<div class="content">
+						<h3><a href="{% url 'post_list'%}">Read Article</a></h3>
+						<p>성화가 포스팅한 글을 읽을 수 있습니다.</p>
+					</div>
+				</article>
+				<article>
+					<span class="icon fa-paper-plane"></span>
+					<div class="content">
+						<h3><a href="{% url 'football_list'%}">EPL Live Ranking</a></h3>
+						<p>English Premeir League의 순위표를 확인할 수 있습니다.</p>
+					</div>
+				</article>
+				<article>
+					<span class="icon fa-rocket"></span>
+					<div class="content">
+						<h3>Shopping Mall</h3>
+						<p>현재 구상중인 기능입니다.</p>
+					</div>
+				</article>
+				<article>
+					<span class="icon fa-signal"></span>
+					<div class="content">
+						<h3>Game</h3>
+						<p>추후 가볍게 즐길 수 있는 웹 게임도 개발 예정입니다.</p>
+					</div>
+				</article>
+			</div>
+		</section>
 
 {% endblock %}

@@ -1,13 +1,42 @@
 {% extends 'blog/base.html' %}
 <!--  이 두 구문의 순서가 중요함.  !-->
     {% block content %}
+      <br>
     	<div class="about-me">
-	    	I'm Seonghwa Lee.<br>
+        <div class="page-smallheader">
+            <button class="btn btn-primary"> <a href="http://sounghwa777.blog.me">Naver Blog </a> </button>
+            <button class="btn btn-primary"> <ahref="http://greenhair.pe.hu">Wordpress Blog</a> </button>
+            <button class="btn btn-primary"> <a href="https://www.facebook.com/Martian.Lee">Facebook </a> </button>
+            <button class="btn btn-primary"> <a href="https://martianlee.gitbooks.io/my-beautiful-soup-tutorial/content/">My Beautiful Soup Tutorial </a> </button>
+            <button class="btn btn-primary"> <a href="http://fcimhotep.pe.hu/" class="external_link" id="link_to_wiki_page"> Team Imhotep </a> </button>
+        </div>
+        <br>
+        {% load static %}
+  			<img src="{% static 'images/image1.jpg' %}" alt="" />
+        <br><br>
+        <h2>
+          안녕하세요! 저는 이성화라고 합니다. <br>
+          저는 숭실대학교 컴퓨터학부에 재학 중이구요, 또 포스텍 영재기업인 1기입니다.<br>
+          저는 만드는 것을 좋아합니다. 요리, 종이접기, 레고..와우! <br>
+          몸으로 하는 일도 좋아하는데요, 특히 축구를 좋아합니다. FC이모텝에서 수비수로 뛰고 있습니다.<br>
+          저는 세상을 바꾸고 싶습니다. <br>
+          저는 어릴 때부터 컴퓨터를 공부해 왔기에 컴퓨터는 하나의 도구가 된다고 생각합니다.
+          그래서 저는 저만의 가치로 세상을 바꾸는 방법을 스타트업을 만드는 것이라고 생각해 공부하고 있습니다.
+          학교를 졸업하면 바로 저만의 비즈니스를 하고 싶습니다.
+          이 블로그는 포스팅, 여러가지 웹 어플리케이션 개발을 위해 만들었습니다.
+          파이썬을 처음 배워서 Django Framework를 사용하였고
+          Frontend는 Jquery/HTML/CSS 로 되어 있습니다.
+        </h2>
+        <h2>
+	    	Hi! I'm Seonghwa Lee.<br>
 	    	I love to make something new. This blog is one of my creation.<br>
-	    	I love to play soccer. Someday I want to be a football manager. Right now I'm a defender in Team Imhotep<br>
-	    	I enjoy problem solving which is using algorithm.<br>
+	    	I love to play soccer. Someday I want to be a football manager. Right now I'm a defender in Team Imhotep.<br>
+	    	I enjoy problem solving which use computer program and algorithm.<br>
 	    	I have been solved problem since 2005 when I was 5th elementry school.<br>
+        Nowadays I've watched so many social problems. It's painful to just looking at.<br>
+        I want to solve social problem. <br>
 	    	My near dream is making my own business. Using my technological knowledge. <br>
 	    	Will you join with me?<br>
+        </h2>
 	    </div>
     {% endblock content %}

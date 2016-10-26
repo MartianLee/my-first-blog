@@ -1,18 +1,43 @@
 {% extends 'blog/base.html' %}
 <!--  이 두 구문의 순서가 중요함.  !-->
-
 	    {% block content %}
 	    	{% for post in posts %}
-			    <div class="post">
-			        <div class="date">
-			            {{ post.published_date }}
-			        </div>
-			        <!-- <h1><a href="">{{ post.title }}</a></h1> !-->
-			        <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-			        <p>{{ post.text|safe }}</p>
-			        <!-- <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a><br> -->
-			        <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
+					<article>
+						<div class="content">
+				    	<div class="post">
+				        <!-- <h1><a href="">{{ post.title }}</a></h1> !-->
+				        <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+								<div class="date">
+				            {{ post.published_date }}
+				        </div>
+				        <p>{{ post.text|safe }}</p>
+				        <!-- <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a><br> -->
+								<p>태그 :
+								</p>
+				        <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.approved_comments.count }}</a>
 
-			    </div>
+				    	</div>
+						</div>
+					</article>
+					<br><br>
 			{% endfor %}
+			<br>
+			<div class="pagination">
+				<h2>
+			    <span class="step-links">
+			        {% if posts.has_previous %}
+			            <a href="?page={{ posts.previous_page_number }}">previous</a>
+			        {% endif %}
+
+			        <span class="current">
+			            Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+			        </span>
+
+			        {% if posts.has_next %}
+			            <a href="?page={{ posts.next_page_number }}">next</a>
+			        {% endif %}
+			    </span>
+				</h2>
+			</div>
+			<br><br>
 	    {% endblock content %}
