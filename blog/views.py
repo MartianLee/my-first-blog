@@ -86,3 +86,11 @@ def comment_remove(request, pk):
     post_pk = comment.post.pk
     comment.delete()
     return redirect('post_detail', pk=post_pk)
+
+def football_list(request):
+
+    return render(request, 'blog/football_list.html' )   
+
+def home(request):
+
+    return render(request, 'blog/home.html' )
