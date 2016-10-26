@@ -1,115 +1,141 @@
-.page-header {
-    background-color: #86DE86;
-    margin-top: 0;
-    padding: 20px 20px 10px 40px;
-    margin-bottom: 0;
-    border: none;
+/* 기본 페이지를 담당하는 CSS 파일 입니다. (아직 분리가 안됨) */
+
+/* 폰트 설정*/
+@font-face {
+  font-family: 'NanumGothic';
+  src: url('../fonts/NanumGothic.ttf') format('trutype');
+  src: local('../fonts/NanumGothic.ttf') format('trutype');
 }
 
-.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
-    color: #ffffff;
-    font-size: 40pt;
-    text-decoration: none;
-    margin-bottom: 20;
+body{
+  font-family: 'NanumGothic'
 }
 
-.page-smallheader {
-    padding: 5px 5px 5px 0px;
-    margin-bottom: 0;
-}
+/* All – 모든 해상도에서 해석하는 코드(미디어 쿼리 적용 안 함) */
 
-.page-smallheader a{
+/*@media (min-width:1025px){*/
 
-    padding: 5px 5px 5px 5px;
-    color: #ffffff;
-    font-size: 11pt;
-}
+  .page-header {
+      background-color: #86DE86;
+      margin-top: 0;
+      padding: 20px 20px 10px 40px;
+      margin-bottom: 0;
+      border: none;
+  }
 
-.post-header{
-    display:block;
-    background-color: #86DE86;
-    padding: 10px 10px 25px 40px;
-    font-size: 11pt;
-    margin-top: 0;
-    margin-bottom: 15;
-}
+  .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+      color: #ffffff;
+      font-size: 40pt;
+      text-decoration: none;
+      margin-bottom: 20;
+  }
 
-.post-header a{
-    background-color: #00CED1;
-    padding: 10px 10px 10px 10px;
-    margin-right: 5;
-    color: #ffffff;
-    font-size: 11pt;
-}
-
-.content {
-    margin-left: 40px;
-}
-
-h1, h2, h3, h4 {
+  .page-header h1{
     font-family: 'Lobster', cursive;
-}
+  }
 
-.date {
-    float: right;
-    color: #828282;
-}
 
-.save {
-    float: right;
-}
 
-.post-form textarea, .post-form input {
-    width: 100%;
-}
+  .page-smallheader {
+      padding: 5px 5px 5px 0px;
+      margin-bottom: 0;
+  }
 
-.top-menu, .top-menu:hover, .top-menu:visited {
-    color: #ffffff;
-    float: right;
-    font-size: 25pt;
-    margin-right: 20px;
-}
+  .page-smallheader a{
 
-.post {
-    margin-bottom: 70px;
-}
+      padding: 5px 5px 5px 5px;
+      color: #ffffff;
+      font-size: 11pt;
+  }
 
-.post h1 a, .post h1 a:visited {
-    color: #000000;
-}
+  .post-header{
+      display:block;
+      background-color: #86DE86;
+      padding: 10px 10px 25px 40px;
+      font-size: 11pt;
+      margin-top: 0;
+      margin-bottom: 15;
+  }
 
-.post h1 a, .post h1 a:visited {
-    color: #000000;
-}
+  .post-header a{
+      background-color: #00CED1;
+      padding: 10px 10px 10px 10px;
+      margin-right: 5;
+      color: #ffffff;
+      font-size: 11pt;
+  }
 
-.comment {
-    margin: 20px 0px 20px 20px;
-}
+  .content {
+      margin-left: 40px;
+  }
 
-.about-me{
-    padding: 10px 10px 10px 10px;
-    background-color: #AFEEEE;
-}
-.login-page{
-    padding: 10px 10px 10px 10px;
-    background-color: #AFEEEE;
-}
+  /*
+  h1, h2, h3, h4 {
+      font-family: 'Lobster', cursive;
+  }
+  */
 
-.login-page table{
-    height: 70px;
-}
+  .date {
+      float: right;
+      color: #828282;
+  }
 
-.login-page input{
-    padding: 5px 5px 5px 5px;
-    border: none;
-    border-radius: 4px;
-}
-.login-page input:focus{
-    background-color: lightblue;
-}
+  .save {
+      float: right;
+  }
 
+  .post-form textarea, .post-form input {
+      width: 100%;
+  }
+
+  .top-menu, .top-menu:hover, .top-menu:visited {
+      color: #ffffff;
+      float: right;
+      font-size: 25pt;
+      margin-right: 20px;
+  }
+
+  .post {
+      margin-bottom: 70px;
+  }
+
+  .post h1 a, .post h1 a:visited {
+      color: #000000;
+  }
+
+  .post h1 a, .post h1 a:visited {
+      color: #000000;
+  }
+
+  .comment {
+      margin: 20px 0px 20px 20px;
+  }
+
+  .about-me{
+      padding: 10px 10px 10px 10px;
+      background-color: #AFEEEE;
+  }
+  .login-page{
+      padding: 10px 10px 10px 10px;
+      background-color: #AFEEEE;
+  }
+
+  .login-page table{
+      height: 70px;
+  }
+
+  .login-page input{
+      padding: 5px 5px 5px 5px;
+      border: none;
+      border-radius: 4px;
+  }
+  .login-page input:focus{
+      background-color: lightblue;
+  }
 
 table {
+
+    overflow:auto;
     font-family:Arial, Helvetica, sans-serif;
     color:#666;
     font-size:12px;

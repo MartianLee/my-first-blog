@@ -89,7 +89,7 @@ def comment_remove(request, pk):
 
 def football_list(request):
 
-    return render(request, 'blog/football_list.html' )   
+    return render(request, 'blog/football_list.html' )
 
 def home(request):
 
