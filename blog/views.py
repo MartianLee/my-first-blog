@@ -106,3 +106,6 @@ def football_list(request):
 def home(request):
 
     return render(request, 'blog/home.html' )
+
+def pinterest(request):
+    return render(request, 'blog/pinterest.html')
