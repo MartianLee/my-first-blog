@@ -109,3 +109,6 @@ def home(request):
 
 def pinterest(request):
     return render(request, 'blog/pinterest.html')
+
+def project(request):
+    return render(request, 'blog/project.html')

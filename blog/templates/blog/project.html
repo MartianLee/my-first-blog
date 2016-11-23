@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %}
+<!--  이 두 구문의 순서가 중요함.  !-->
+  {% block content %}
+
+    <div>
+      <div>
+        <h1> Algorithm </h1>
+        <h3> 2009 한국정보올림피아드 은상</h3>
+        <h3> 2012 숭실대학교 프로그래밍 대회 2등</h3>
+        <h3> 2012 ACM-ICPC Daejeon Regional 18th place</h3>
+        <h3> 2013 숭실대학교 프로그래밍 대회 2등</h3>
+        <h3> 2013 ACM-ICPC Daejeon Regional 18th place</h3>
+      </div>
+      <div>
+        <h1> Engineering <h1>
+        <h3> <a href="http://sounghwa777.blog.me/30138025507" target="_blank">경상급식</a> </h3>
+        <h3> 키넥트 프로젝트 </h3>역할 : 개발 전반<br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/JT54TLOucMg" frameborder="0" allowfullscreen></iframe>
+        <h3> MFC 프로젝트 </h3>
+        역할 : GUI, 더블버퍼링 처리 등<br>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Az0DS5MlhSc" frameborder="0" allowfullscreen></iframe>
+        <h3> 공군 정보체계관리단(구. 중앙전산소) 인사/작전팀 근무</h3>
+        역할 : Oracle Database 관리, Spring Framework 유지보수
+        <h3> <a href="{% url 'home'%}">블로그 with Django</a> </h3>
+      </div>
+
+    </div>
+
+  {% endblock content %}

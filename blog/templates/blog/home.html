@@ -23,52 +23,6 @@
 		</span>
 	</section>
 
-	<h2> To do </h2>
-	<table>
-		<tr>
-
-			<td><b>구현해야 하는 기능</b></td>
-			<td><b>구현 여부</b></td>
-			<td><b>비고</b></td>
-
-		</tr>
-		<tr>
-			<td>에디터, 페이지네이션</td>
-			<td>O</td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>포스트에 태그, 이미지/파일 업로드 기능</td>
-			<td>X</td>
-			<td>CKEditor 문서 더 읽어보기</td>
-		</tr>
-		<tr>
-			<td>블로그 조금 더 이쁘게 커스터마이징하기ㅋ</td>
-			<td>X</td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>서버에 cron tab 설치, 파서 실행시키기</td>
-			<td>X</td>
-			<td></td>
-		</tr>
-		<tr>
-			<td>쇼핑몰 앱 구상</td>
-			<td>X</td>
-			<td>페이지 에디팅, 결제모듈 공부</td>
-		</tr>
-		<tr>
-			<td>SCCC 홈페이지 개발</td>
-			<td>X</td>
-			<td>hustoj : php 공부</td>
-		</tr>
-	</table>
-	<div class="progress">
-	  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 16%;">
-	    16.66%
-	  </div>
-	</div>
-
 	<!-- Section -->
 		<section>
 			<header class="major">
@@ -92,8 +46,8 @@
 				<article>
 					<span class="icon fa-rocket"></span>
 					<div class="content">
-						<h3>Shopping Mall</h3>
-						<p>현재 구상중인 기능입니다.</p>
+						<h3><a href="{% url 'project'%}">My Projects</a></h3>
+						<p>여태까지 진행했던 프로젝트 들입니다.</p>
 					</div>
 				</article>
 				<article>
@@ -105,5 +59,49 @@
 				</article>
 			</div>
 		</section>
+		<h2> To do </h2>
+		<table>
+			<tr>
 
+				<td><b>구현해야 하는 기능</b></td>
+				<td><b>구현 여부</b></td>
+				<td><b>비고</b></td>
+
+			</tr>
+			<tr>
+				<td>에디터, 페이지네이션</td>
+				<td>O</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>포스트에 태그, 이미지/파일 업로드 기능</td>
+				<td>X</td>
+				<td>CKEditor 문서 더 읽어보기</td>
+			</tr>
+			<tr>
+				<td>블로그 조금 더 이쁘게 커스터마이징하기ㅋ</td>
+				<td>X</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>서버에 cron tab 설치, 파서 실행시키기</td>
+				<td>X</td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>쇼핑몰 앱 구상</td>
+				<td>X</td>
+				<td>페이지 에디팅, 결제모듈 공부</td>
+			</tr>
+			<tr>
+				<td>SCCC 홈페이지 개발</td>
+				<td>X</td>
+				<td>hustoj : php 공부</td>
+			</tr>
+		</table>
+		<div class="progress">
+		  <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 16%;">
+		    16.66%
+		  </div>
+		</div>
 {% endblock %}
