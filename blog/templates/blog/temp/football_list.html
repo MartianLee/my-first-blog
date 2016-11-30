@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+<!--  이 두 구문의 순서가 중요함.  !-->
+
+	    {% block content %}
+	    	<p><b>● 네이버 스포츠에서 파싱하여 DB에 저장한 값을 장고로 불러옴.</b></p>
+	    	<p><b>{{ leagueTable.league }} 순위</b></p>
+	    	<table>
+	    	<tr>
+	    	<td>순위</td>
+	    	<td>팀</td>
+	    	<td>경기수</td>
+	    	<td>승</td>
+	    	<td>무</td>
+	    	<td>패</td>
+	    	</tr>
+	    	{% for club in leagueTable %}
+	    		<tr>
+			        <td> {{ club.position }} </td>
+			        <td> {{ club.clubkor }} </td>
+			        <td> <p>{{ club.played }}</p> </td>
+			        <td> <p>{{ club.win }}</p> </td>
+			        <td> <p>{{ club.draw }}</p> </td>
+			        <td> <p>{{ club.lose }}</p> </td>			        
+			    </tr>
+			{% endfor %}
+			</table>
+	    {% endblock content %}

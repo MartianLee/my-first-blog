@@ -4,8 +4,8 @@ from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from .models import Post, Comment
-from .forms import PostForm, CommentForm
+from .models import Post, Comment, Leaguetable
+from .forms import PostForm, CommentForm, LeaguetableForm
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
@@ -100,8 +100,9 @@ def comment_remove(request, pk):
     return redirect('post_detail', pk=post_pk)
 
 def football_list(request):
-
-    return render(request, 'blog/football_list.html' )
+    leaguetable = Leaguetable.objects.filter()
+    #leaguetable = get_object_or_404(Leaguetable, pk=pk)
+    return render(request, 'blog/football_list.html', {'leagueTable': leaguetable})
 
 def home(request):
 

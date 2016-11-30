@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post, Comment
+from .models import Post, Comment, Leaguetable
 
 
 class PostForm(forms.ModelForm):
@@ -14,3 +14,7 @@ class CommentForm(forms.ModelForm):
         fields = ('author', 'text',)
         #fields = '__all__'
         #exclude = ()
+class LeaguetableForm(forms.ModelForm):
+	class Meta:
+		model = Leaguetable
+		fields = ('position','league','clubkor','played','win','draw','lose','gf','ga','gd','points',)

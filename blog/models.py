@@ -1,13 +1,11 @@
 from django.db import models
 from django.utils import timezone
-from ckeditor.fields import RichTextField
 
 
 class Post(models.Model):
     author = models.ForeignKey('auth.User')
     title = models.CharField(max_length=200)
-    #text = models.TextField()
-    text = RichTextField()
+    text = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
 
@@ -34,3 +32,33 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.text
+
+class Stocks(models.Model):
+    date = models.TextField(blank=True, null=True)
+    trans = models.TextField(blank=True, null=True)
+    symbol = models.TextField(blank=True, null=True)
+    qty = models.FloatField(blank=True, null=True)
+    price = models.FloatField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'stocks'
+
+class Leaguetable(models.Model):
+    position = models.IntegerField(primary_key=True)
+    league = models.TextField(primary_key=True)
+    clubkor = models.TextField(db_column='clubKor')  # Field name made lowercase.
+    clubeng = models.TextField(db_column='clubEng')  # Field name made lowercase.
+    played = models.IntegerField()
+    win = models.IntegerField()
+    draw = models.IntegerField()
+    lose = models.IntegerField()
+    gf = models.IntegerField()
+    ga = models.IntegerField()
+    gd = models.IntegerField()
+    points = models.IntegerField()
+
+    class Meta:
+        managed = False
+        db_table = 'leagueTable'
+        unique_together = (('position', 'league'),)

@@ -1,0 +1,49 @@
+{% load staticfiles %}
+<html>
+    <head>
+    	<title>Django Girls blog made by Seonghwa</title>
+
+    	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="{% static 'css/blog.css' %}">
+		<link href="https://fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+    </head>
+    <body>
+        <div class="page-header">
+        	{% if user.is_authenticated %}
+			    <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+                <a href="{% url 'post_draft_list' %}" class="top-menu"><span class="glyphicon glyphicon-edit"></span></a>
+                <p class="top-menu"><small>Hello {{ user.username }}(<a href="{% url 'logout' %}">Log out</a>)</small></p>
+            {% else %}
+                <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
+            {% endif %}
+            <h1>
+                <a href="{% url 'home' %}">Seonghwa's Blog made by Django</a>
+            </h1>
+            <div class="page-smallheader">
+                <button class="btn btn-primary"> <a href="http://sounghwa777.blog.me">Naver Blog </a> </button>
+                <button class="btn btn-primary"> <ahref="http://greenhair.pe.hu">Wordpress Blog</a> </button>
+                <button class="btn btn-primary"> <a href="https://www.facebook.com/Martian.Lee">Facebook </a> </button>
+                <button class="btn btn-primary"> <a href="https://martianlee.gitbooks.io/my-beautiful-soup-tutorial/content/">My Beautiful Soup Tutorial </a> </button>
+                <button class="btn btn-primary"> <a href="http://fcimhotep.pe.hu/" class="external_link" id="link_to_wiki_page"> Team Imhotep </a> </button>
+            </div>
+        </div>
+        
+        <div class="post-header">
+            <a href="{% url 'home'%}">home</a>
+            <a href="{% url 'post_list'%}">posts</a>
+            <a href="{% url 'football_list'%}">football</a>
+            <a href="{% url 'post_about_me'%}">about me</a>
+        </div>
+        <div class="content container">
+		    <div class="row">
+		        <div class="col-md-8">
+		            {% block content %}
+            		{% endblock %}
+		        </div>
+		    </div>
+		</div>
+    </body>
+</html>

@@ -1,18 +1,19 @@
 {% extends 'blog/base.html' %}
 <!--  이 두 구문의 순서가 중요함.  !-->
     {% block content %}
-      <br>
-    	<div class="about-me">
+      <br >
+    	<div class="about-me" style="width=100%">
         <div class="page-smallheader">
             <button class="btn btn-primary"> <a href="http://sounghwa777.blog.me">Naver Blog </a> </button>
             <button class="btn btn-primary"> <ahref="http://greenhair.pe.hu">Wordpress Blog</a> </button>
+            <button class="btn btn-primary"> <a href="https://github.com/MartianLee" class="external_link" id="link_to_wiki_page"> Github </a> </button>
             <button class="btn btn-primary"> <a href="https://www.facebook.com/Martian.Lee">Facebook </a> </button>
             <button class="btn btn-primary"> <a href="https://martianlee.gitbooks.io/my-beautiful-soup-tutorial/content/">My Beautiful Soup Tutorial </a> </button>
             <button class="btn btn-primary"> <a href="http://fcimhotep.pe.hu/" class="external_link" id="link_to_wiki_page"> Team Imhotep </a> </button>
         </div>
         <br>
         {% load static %}
-  			<img src="{% static 'images/image1.jpg' %}" alt="" />
+  			<img src="{% static 'images/image1.jpg' %}" alt="" width="100%"/>
         <br><br>
         <h2>
           안녕하세요! 저는 이성화라고 합니다. <br>
