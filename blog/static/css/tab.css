@@ -1,0 +1,12 @@
+.tab div {
+    display: none;
+}
+
+.tab div:target {
+    display: block;
+}
+
+.tab .menu {
+    background: #aaa;
+    color:#eee;
+}

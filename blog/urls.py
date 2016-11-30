@@ -22,4 +22,5 @@ urlpatterns = [
 	url(r'^comment/(?P<pk>\d+)/remove/$', views.comment_remove, name='comment_remove'),
 
     url(r'^pinterest/$', views.pinterest, name='pinterest'),
+    url(r'^project/$', views.project, name='project'),
 ]

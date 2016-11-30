@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="{% static 'css/main.css' %}" />
 		<link rel="stylesheet" href="{% static 'css/pinterest.css' %}" />
+		<link rel="stylesheet" href="{% static 'css/tab.css' %}" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!-- Scripts -->
@@ -81,6 +82,7 @@
 										<li><a href="{% url 'home'%}">Homepage</a></li>
 										<li><a href="{% url 'post_list'%}">Post</a></li>
 										<li><a href="{% url 'football_list'%}">Football</a></li>
+										<li><a href="{% url 'project'%}">Project</a></li>
 										<li><a href="{% url 'pinterest'%}">Pinterest</a></li>
 										<li><a href="{% url 'post_about_me'%}">About me</a></li>
 										<!--
@@ -101,15 +103,15 @@
 							<!-- Section -->
 								<section>
 									<header class="major">
-										<h2>Section Test</h2>
+										<h2>My Projects</h2>
 									</header>
 									<div class="mini-posts">
 										<article>
-											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+											<p>여태까지 성화의 프로젝트 이력이 궁금하신가요?</p>
 										</article>
 									</div>
 									<ul class="actions">
-										<li><a href="#" class="button">More</a></li>
+										<li><a href="{% url 'project' %}" class="button">More</a></li>
 									</ul>
 								</section>
 

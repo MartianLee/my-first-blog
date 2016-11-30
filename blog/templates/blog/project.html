@@ -1,0 +1,49 @@
+{% extends 'blog/base.html' %}
+<!--  이 두 구문의 순서가 중요함.  !-->
+  {% block content %}
+
+    <div class="tab">
+
+      <a class = "menu" href="#tab1">Algorithm</a>
+      <a class = "menu" href="#tab2">Engineering</a>
+      <a class = "menu" href="#tab3">Postech CEO</a>
+      <a class = "menu" href="#tab4"></a>
+
+
+        <div id="tab1">
+          <h1> Algorithm </h1>
+          <h3> 2009. 한국정보올림피아드 은상</h3>
+          <h3> 2012. 숭실대학교 프로그래밍 대회 2등</h3>
+          <h3> 2012. ACM-ICPC Daejeon Regional 18th place</h3>
+          <h3> 2013. SCCC 총무</h3>
+          <h3> 2013. 숭실대학교 프로그래밍 대회 2등</h3>
+          <h3> 2013. ACM-ICPC Daejeon Regional 18th place</h3>
+          <h3> 2016. SCCC 회장</h3>
+        </div>
+
+        <div id="tab2">
+          <h1> Engineering <h1>
+          <h3> <a href="http://sounghwa777.blog.me/30138025507" target="_blank">경상급식</a> </h3>
+          <img src="https://lh3.googleusercontent.com/6sOUwiuVcjKbkN_WX6hrzoN0A2hegNok3VsjsD0yjaS7WEZL58UQObdydsdaSQ0_zPWSp2B0UcExDqgQTjPtXT735aLGV4hfTBB0m-zr3Tr4zrthvJalyev4FIUvfujf7gvrLG3O9HoUHFObcN08hdbirmRZ7UlR6PEml_sLTNMaBiH_wrG9FzXxUVdHayNdMk6HNk7HGCo-HcdruTRlAk4XjacDiARbVagCbXDC04OqjUp7Zb7nRxIAU-H4h3Qq_GJMYCl0-iIFUdOtVIYgTjl7KV2yGk3pLtLO20ttTGvMVFwJN1cxJUaLtk5FxjGIiBHdro3mWiKoT2HBkxBnZSf3J-2iT7CShY09PZcLpQIJzvy8Qck6G-BCp6GpUyZky0-46s8BWwIgXAbsjQ1x5JhKibX13DmhU5SRyZ-vFJePv6pujaQfEFqvU7InpljOSmMmBSCOshRR5UnD2NAT_95bzXZldEasVn-9tnOLwjrnolz4ShDXBu8kGr5nBuUUIlXjfWrd7dfZgWUEoxvLo6ThCLkSGYsY6zT1s8pYwk1QqlZLAMdJ2OaoJRoD2go8JJP-e9jRwOaoaxWXXGXCxafKbrqHLNSNIwDpOUFEzKjyua9fKg=w480-h800-no" width="200">
+          <h3> 키넥트 프로젝트 </h3>역할 : 개발 전반<br>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/JT54TLOucMg" frameborder="0" allowfullscreen></iframe>
+          <h3> MFC 프로젝트 </h3>
+          역할 : GUI, 더블버퍼링 처리 등<br>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/Az0DS5MlhSc" frameborder="0" allowfullscreen></iframe>
+          <h3> 공군 정보체계관리단(구. 중앙전산소) 인사/작전팀 근무</h3>
+          역할 : Oracle Database 관리, Spring Framework 유지보수<br><br>
+          <h3> <a href="{% url 'home'%}">블로그 with Django</a> </h3>
+          <br>
+        </div>
+
+        <div id="tab3">
+          <h1> Postech CEO <h1>
+          <h3> 포스텍 영재기업인 교육원 1기 수료</h3>
+          <h3> 포스텍 영재기업인 2기 4D 캠프 조교</h3>
+          <h3> 포스텍 영재기업인 3기 4D 캠프 조교</h3>
+          <h3> 2016년 심화과정 IoT과정 이수</h3>
+        </div>
+
+    </div>
+
+  {% endblock content %}
