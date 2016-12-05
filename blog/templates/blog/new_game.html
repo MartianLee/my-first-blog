@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+<!--  이 두 구문의 순서가 중요함.  !-->
+  {% block content %}
+
+    <div class="contents">
+      <h1>New Game</h1>
+
+        <form method="POST" class="post-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="save btn btn-default">Save</button>
+        </form>
+        <button onclick = "location.href = '{% url 'show_game'%}' "
+         class="save btn btn-default" >Check Handle</button>
+    </div>
+
+  {% endblock content %}

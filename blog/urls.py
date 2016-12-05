@@ -23,4 +23,7 @@ urlpatterns = [
 
     url(r'^pinterest/$', views.pinterest, name='pinterest'),
     url(r'^project/$', views.project, name='project'),
+    url(r'^new_game/$', views.new_game, name='new_game'),
+    url(r'^add_problem/$', views.add_problem, name='add_problem'),
+    url(r'^show_game/$', views.show_game, name='show_game'),
 ]

@@ -46,7 +46,7 @@ class Stocks(models.Model):
 
 class Leaguetable(models.Model):
     position = models.IntegerField(primary_key=True)
-    league = models.TextField(primary_key=True)
+    league = models.TextField()
     clubkor = models.TextField(db_column='clubKor')  # Field name made lowercase.
     clubeng = models.TextField(db_column='clubEng')  # Field name made lowercase.
     played = models.IntegerField()
@@ -59,6 +59,40 @@ class Leaguetable(models.Model):
     points = models.IntegerField()
 
     class Meta:
-        managed = False
+        #managed = False
         db_table = 'leagueTable'
         unique_together = (('position', 'league'),)
+
+class Solvedproblem(models.Model):
+    handle = models.TextField(primary_key=True)
+    problem = models.TextField()
+    last_date = models.DateTimeField(default=timezone.now)
+    language = models.TextField()
+
+    class Meta:
+        #managed = False
+        db_table = 'solvedProblem'
+        unique_together = (('handle', 'problem'),)
+
+class Gamesetinfo(models.Model):
+    gameset = models.IntegerField(primary_key=True)
+    game_type = models.IntegerField(null=False)
+    rule_size = models.IntegerField(null=False)
+    start_date = models.DateTimeField(default=timezone.now)
+    end_date = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        #managed = False
+        db_table = 'gamesetInfo'
+
+class Gamesetproblem(models.Model):
+    gameset = models.ForeignKey('Gamesetinfo')
+    #gameset = models.IntegerField(primary_key=True)
+    rule_num = models.IntegerField()
+    problem = models.IntegerField()
+    language = models.TextField()
+
+    class Meta:
+        #managed = False
+        db_table = 'gamesetProblem'
+        unique_together = (('gameset', 'rule_num'),)

@@ -91,13 +91,13 @@ editDataStr = str(editData)
 
 # SQLite DB 연결
 conn = sqlite3.connect("db.sqlite3")
- 
+
 # Connection 으로부터 Cursor 생성
 cur = conn.cursor()
 
 # SQL 쿼리 실행
 # cur.execute("select * from sqlite_master where type = 'table'; ")
- 
+
 #query =  "CREATE TABLE stocks(id INT PRIMARY KEY NOT NULL,date text NOT NULL, trans text NOT NULL, symbol text NOT NULL, qty real NOT NULL, price real NOT NULL) "
 
 #cur.execute(query)
@@ -131,7 +131,7 @@ for row in rows:
 	print("ga : ",row[9])
 	print("gd : ",row[10])
 	print("points : ",row[11])
- 
+
 conn.commit()
 
 

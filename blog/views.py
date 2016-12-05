@@ -4,8 +4,8 @@ from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from .models import Post, Comment, Leaguetable
-from .forms import PostForm, CommentForm, LeaguetableForm
+from .models import Post, Comment, Leaguetable, Solvedproblem, Gamesetproblem, Gamesetinfo
+from .forms import PostForm, CommentForm, LeaguetableForm, GameForm, ProblemForm, HandleForm
 
 def post_list(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
@@ -105,7 +105,6 @@ def football_list(request):
     return render(request, 'blog/football_list.html', {'leagueTable': leaguetable})
 
 def home(request):
-
     return render(request, 'blog/home.html' )
 
 def pinterest(request):
@@ -113,3 +112,38 @@ def pinterest(request):
 
 def project(request):
     return render(request, 'blog/project.html')
+
+#def problem_game(request):
+#    return render(request, 'blog/problem_game.html')
+
+def new_game(request):
+    if request.method == "POST":
+        form = GameForm(request.POST)
+        if form.is_valid():
+            game = form.save(commit=False)
+            game.save()
+            return redirect('add_problem')
+    else:
+        form = GameForm()
+    return render(request, 'blog/new_game.html', {'form': form})
+
+def add_problem(request):
+    problem = Gamesetproblem.objects.filter().order_by('rule_num')
+    if request.method == "POST":
+        form = ProblemForm(request.POST)
+        if form.is_valid():
+            game = form.save(commit=False)
+            game.save()
+            return redirect('add_problem')
+    else:
+        form = ProblemForm()
+    return render(request, 'blog/add_problem.html', {'form': form, 'problem':problem})
+
+def show_game(request):
+    if request.method == "POST":
+        form = HandleForm(request.POST)
+        problem = Gamesetproblem.objects.get(handle="Martian")
+        return redirect('show_game')
+    else:
+        form = HandleForm()
+    return render(request, 'blog/show_game.html',{'form': form,})
