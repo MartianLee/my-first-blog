@@ -1822,7 +1822,7 @@
 	@media screen and (min-width: 481px) and (max-width: 1680px) {
 
 		.row > * {
-			padding: 0 0 0 1.5em;
+			padding: 1em 1em 1em 1em;
 		}
 
 		.row {

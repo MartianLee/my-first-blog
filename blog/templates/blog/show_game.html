@@ -2,36 +2,36 @@
 <!--  이 두 구문의 순서가 중요함.  !-->
   {% block content %}
 
-    <div class="game_info">
+    <div id="game_info">
       <h1>Show Game</h1>
       <h2>게임 1</h2>
       <table>
         <tr>
           <td>1</td>
           <td>2</td>
-          <td bgcolor="yellow">3</td>
+          <td class="solved">3</td>
           <td>4</td>
         </tr>
         <tr>
-            <td bgcolor="yellow">5</td>
-            <td bgcolor="yellow">6</td>
-            <td bgcolor="yellow">7</td>
-            <td bgcolor="yellow">8</td>
+            <td class="solved">5</td>
+            <td class="solved">6</td>
+            <td class="solved">7</td>
+            <td class="solved">8</td>
         </tr>
         <tr>
             <td>9</td>
             <td>10</td>
-            <td bgcolor="yellow">11</td>
+            <td class="solved">11</td>
             <td>12</td>
         </tr>
         <tr>
             <td>13</td>
             <td>14</td>
-            <td bgcolor="yellow">15</td>
+            <td class="solved">15</td>
             <td>16</td>
         </tr>
       </table>
-      <b>3시간 50분 남음</b>
+      <p id="time_left">3시간 50분 남음</p>
       <h2> 기간 </h2>
       16/12/24 8시 ~ 16.12.25 8시
       <h2> 참가자 </h2>

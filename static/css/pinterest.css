@@ -19,38 +19,39 @@
   margin-top:11px;
 }
 
-#problems{
-  column-gap: 15px;
-  column-count: 3;
-}
-#problems figure{
-  display: inline-block;
-
-  border:1px solid rgba(0,0,0,0.2);
-  margin:0;
-  margin-bottom: 15px;
-  padding:10px;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.5);;
-}
-#problems figure img{
-  width:100%;
-}
-#problems figure figcaption{
-  border-top:1px solid rgba(0,0,0,0.2);
-  padding:10px;
-  margin-top:11px;
-  text-align:center;
-}
-
 #problemset img{
   width:100%;
   height:100%;
 }
+
 #problemset .col-sm-3{
   display: inline-block;
   border:1px solid rgba(0,0,0,0.2);
-  margin:0;
   margin-bottom: 15px;
-  padding:10px;
   box-shadow: 2px 2px 5px rgba(0,0,0,0.5);;
+}
+
+#problemset .col-sm-3 p{
+  border-top:1px solid rgba(0,0,0,0.2);
+  padding:10px;
+  margin-top:5px;
+  text-align: center;
+}
+
+#game_info table{
+  width:50%;
+  margin:auto;
+  text-align: center;
+}
+
+#game_info .solved{
+  background-color: teal;
+  color:white;
+  font-weight: bold;
+  margin:auto;
+}
+
+#game_info #time_left{
+  text-align: right;
+  font-weight: bold;
 }
