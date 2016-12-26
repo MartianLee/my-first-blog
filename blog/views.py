@@ -113,8 +113,8 @@ def pinterest(request):
 def project(request):
     return render(request, 'blog/project.html')
 
-#def problem_game(request):
-#    return render(request, 'blog/problem_game.html')
+def problem_game(request):
+    return render(request, 'blog/problem_game.html')
 
 def new_game(request):
     if request.method == "POST":

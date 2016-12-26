@@ -2,33 +2,50 @@
 <!--  이 두 구문의 순서가 중요함.  !-->
   {% block content %}
 
-    <div class="contents">
+    <div class="game_info">
       <h1>Show Game</h1>
+      <h2>게임 1</h2>
       <table>
         <tr>
-          <td>게임 번호</td>
-          <td>문제 순서</td>
-          <td>문제 번호</td>
-          <td>사용 언어</td>
+          <td>1</td>
+          <td>2</td>
+          <td bgcolor="yellow">3</td>
+          <td>4</td>
         </tr>
-        {% for prob in problem %}
-          <tr>
-              <td> {{ prob.gameset }} </td>
-              <td> {{ prob.rule_num }} </td>
-              <td> {{ prob.problem }} </td>
-              <td> {{ prob.language }} </td>
-          </tr>
-        {% endfor %}
+        <tr>
+            <td bgcolor="yellow">5</td>
+            <td bgcolor="yellow">6</td>
+            <td bgcolor="yellow">7</td>
+            <td bgcolor="yellow">8</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>10</td>
+            <td bgcolor="yellow">11</td>
+            <td>12</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>14</td>
+            <td bgcolor="yellow">15</td>
+            <td>16</td>
+        </tr>
       </table>
-      
-      <form method="POST" class="post-form">
-          {% csrf_token %}
-          {{ form.as_p }}
-          <button type="submit" class="save btn btn-default">Save</button>
-      </form>
+      <b>3시간 50분 남음</b>
+      <h2> 기간 </h2>
+      16/12/24 8시 ~ 16.12.25 8시
+      <h2> 참가자 </h2>
+      <a href="#">Martian</a>, king7282, choiking10
+      <h2> 보상 </h2>
+      문화상품권 5천원!
+      <h2> 결과 </h2>
+      (끝난 게임의 경우)
+       <h3>우승 : Martian</h3>
+       <h3>준우승 : king7282</h3>
     </div>
-
-    <button onclick = "location.href = '{% url 'show_game'%}' "
-     class="save btn btn-default" >Check Handle</button>
+    <button onclick = "location.href = '{% url 'add_problem'%}' "
+     class="save btn btn-default">게임 수정</button>
+    <button onclick = "location.href = '{% url 'problem_game'%}' "
+     class="save btn btn-default" > 게임 목록으로 </button>
 
   {% endblock content %}

@@ -1,0 +1,41 @@
+{% extends 'blog/base.html' %}
+<!--  이 두 구문의 순서가 중요함.  !-->
+  {% block content %}
+
+  <div class="contents">
+    <h1>Problem Game</h1>
+  </div>
+  <div id ="problemset">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <img src="http://avisare.com/wp-content/uploads/2016/09/White-Cat-Coaching-not-problem.jpg">
+          <p><a href = "{% url 'show_game'%}">게임 1</a></p>
+        </div>
+        <div class="col-sm-3">
+          <img src="http://avisare.com/wp-content/uploads/2016/09/White-Cat-Coaching-not-problem.jpg">
+          <p>게임 2</p>
+        </div>
+        <div class="col-sm-3">
+          <img src="http://avisare.com/wp-content/uploads/2016/09/White-Cat-Coaching-not-problem.jpg">
+          <p>게임 3</p>
+        </div>
+        <div class="col-sm-3">
+          <img src="http://avisare.com/wp-content/uploads/2016/09/White-Cat-Coaching-not-problem.jpg">
+          <p>게임 4</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <img src="http://avisare.com/wp-content/uploads/2016/09/White-Cat-Coaching-not-problem.jpg">
+          <p>게임 5</p>
+        </div>
+        <div class="col-sm-3">
+          <img src="http://cdn.mysitemyway.com/etc-mysitemyway/icons/legacy-previews/icons/matte-grey-square-icons-alphanumeric/118529-matte-grey-square-icon-alphanumeric-plus-sign-simple.png">
+          <p><a href = "{% url 'new_game'%}">게임 추가</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% endblock content %}

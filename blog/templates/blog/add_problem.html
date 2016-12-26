@@ -10,13 +10,16 @@
           <td>문제 순서</td>
           <td>문제 번호</td>
           <td>사용 언어</td>
+          <td>문제 삭제</td>
         </tr>
         {% for prob in problem %}
           <tr>
-              <td> {{ prob.gameset }} </td>
+              <td> {{ prob.gameset.gameset }} </td>
               <td> {{ prob.rule_num }} </td>
               <td> {{ prob.problem }} </td>
               <td> {{ prob.language }} </td>
+              <td><a href="#" class="top-menu"><span class="glyphicon glyphicon-minus"></span></a>
+              </td>
           </tr>
         {% endfor %}
       </table>
@@ -28,7 +31,7 @@
       </form>
     </div>
 
-    <button onclick = "location.href = '{% url 'show_game'%}' "
-     class="save btn btn-default" >Check Handle</button>
+    <button onclick = "location.href = '{% url 'new_game'%}' "
+     class="save btn btn-default" >게임 설정</button>
 
   {% endblock content %}
