@@ -24,10 +24,26 @@ class GameForm(forms.ModelForm):
 		model = Gamesetinfo
 		fields = ('gameset','game_type','rule_size','start_date','end_date')
 
-class ProblemForm(forms.ModelForm):
-	class Meta:
-		model = Gamesetproblem
-		fields = '__all__'
+class ProblemForm(forms.Form):
+	gameset = forms.ModelChoiceField(queryset=Gamesetinfo.objects.all())
+	rule_num = forms.IntegerField()
+	problem = forms.IntegerField()
+	language = forms.CharField()
+	#class Meta:
+	#	model = Gamesetproblem
+	#	fields = ('gameset','rule_num','problem','language')
+	#def __init__(self, *args, **kwargs):
+		#accountid = kwargs.pop('accountid', None)
+		#super(AccountDetailsForm, self).__init__(*args, **kwargs)
+
+	def save(self, request, Gamesetproblem):
+		Gamesetproblem.gameset = self.cleaned_data['gameset']
+		Gamesetproblem.rule_num = self.cleaned_data['rule_num']
+		Gamesetproblem.problem = self.cleaned_data['problem']
+		Gamesetproblem.language = self.cleaned_data['language']
+		Gamesetproblem.save()
+		return Gamesetproblem
+
 
 class HandleForm(forms.ModelForm):
 	class Meta:

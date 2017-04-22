@@ -25,6 +25,6 @@ urlpatterns = [
     url(r'^project/$', views.project, name='project'),
     url(r'^problem_game/$', views.problem_game, name='problem_game'),
     url(r'^new_game/$', views.new_game, name='new_game'),
-    url(r'^add_problem/$', views.add_problem, name='add_problem'),
-    url(r'^show_game/$', views.show_game, name='show_game'),
+    url(r'^add_problem/(?P<pk>\d+)/$', views.add_problem, name='add_problem'),
+    url(r'^show_game/(?P<pk>\d+)/$', views.show_game, name='show_game'),
 ]

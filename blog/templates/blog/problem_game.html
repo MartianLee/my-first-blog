@@ -8,28 +8,12 @@
   <div id ="problemset">
     <div class="container">
       <div class="row">
+        {% for game in games %}
         <div class="col-sm-3">
           <img src="http://icons.iconarchive.com/icons/webalys/kameleon.pics/256/Mind-Map-Paper-icon.png">
-          <p><a href = "{% url 'show_game'%}">게임 1</a></p>
+          <p><a href = "{% url 'show_game' pk=game.gameset %}">게임 {{game.gameset}}</a></p>
         </div>
-        <div class="col-sm-3">
-          <img src="http://icons.iconarchive.com/icons/webalys/kameleon.pics/256/Mind-Map-Paper-icon.png">
-          <p>게임 2</p>
-        </div>
-        <div class="col-sm-3">
-          <img src="http://icons.iconarchive.com/icons/webalys/kameleon.pics/256/Mind-Map-Paper-icon.png">
-          <p>게임 3</p>
-        </div>
-        <div class="col-sm-3">
-          <img src="http://icons.iconarchive.com/icons/webalys/kameleon.pics/256/Mind-Map-Paper-icon.png">
-          <p>게임 4</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-3">
-          <img src="http://icons.iconarchive.com/icons/webalys/kameleon.pics/256/Mind-Map-Paper-icon.png">
-          <p>게임 5</p>
-        </div>
+        {% endfor %}
         <div class="col-sm-3">
           <img src="http://icons.iconarchive.com/icons/graphicloads/colorful-long-shadow/256/Plus-icon.png">
           <p><a href = "{% url 'new_game'%}">게임 추가</a></p>

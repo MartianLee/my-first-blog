@@ -80,10 +80,12 @@ class Gamesetinfo(models.Model):
     rule_size = models.IntegerField(null=False)
     start_date = models.DateTimeField(default=timezone.now)
     end_date = models.DateTimeField(default=timezone.now)
-
+    def __str__(self):
+        return u'{0}'.format(self.gameset)
     class Meta:
         #managed = False
         db_table = 'gamesetInfo'
+
 
 class Gamesetproblem(models.Model):
     gameset = models.ForeignKey('Gamesetinfo')
@@ -91,6 +93,9 @@ class Gamesetproblem(models.Model):
     rule_num = models.IntegerField()
     problem = models.IntegerField()
     language = models.TextField()
+
+    def save():
+        a=a
 
     class Meta:
         #managed = False

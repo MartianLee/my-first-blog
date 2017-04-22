@@ -31,7 +31,7 @@
       </form>
     </div>
 
-    <button onclick = "location.href = '{% url 'new_game'%}' "
-     class="save btn btn-default" >게임 설정</button>
+    <button onclick = "location.href = '{% url 'show_game' pk=game.pk %}' "
+     class="save btn btn-default" >Back</button>
 
   {% endblock content %}

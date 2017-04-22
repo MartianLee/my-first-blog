@@ -114,7 +114,8 @@ def project(request):
     return render(request, 'blog/project.html')
 
 def problem_game(request):
-    return render(request, 'blog/problem_game.html')
+    games = Gamesetinfo.objects.filter().order_by('gameset')
+    return render(request, 'blog/problem_game.html',{'games': games})
 
 def new_game(request):
     if request.method == "POST":
@@ -122,28 +123,32 @@ def new_game(request):
         if form.is_valid():
             game = form.save(commit=False)
             game.save()
-            return redirect('add_problem')
+            return redirect('problem_game')
     else:
         form = GameForm()
     return render(request, 'blog/new_game.html', {'form': form})
 
-def add_problem(request):
-    problem = Gamesetproblem.objects.filter().order_by('rule_num')
+def add_problem(request, pk):
+    game = get_object_or_404(Gamesetinfo, pk=pk)
+    problem = Gamesetproblem.objects.filter(gameset=pk).order_by('rule_num')
     if request.method == "POST":
         form = ProblemForm(request.POST)
         if form.is_valid():
-            game = form.save(commit=False)
+            #game = form.save(commit=False)
+            game = form.save(form,request,Gamesetproblem)
             game.save()
-            return redirect('add_problem')
+            return redirect('add_problem',pk=pk)
     else:
         form = ProblemForm()
-    return render(request, 'blog/add_problem.html', {'form': form, 'problem':problem})
+        #form.fields['gameset'] = forms.ModelChoiceField(User.objects.filter(account=accountid))
+    return render(request, 'blog/add_problem.html', {'form': form, 'problem':problem, 'game':game})
 
-def show_game(request):
+def show_game(request, pk):
+    games = get_object_or_404(Gamesetinfo, pk=pk)
     if request.method == "POST":
         form = HandleForm(request.POST)
         problem = Gamesetproblem.objects.get(handle="Martian")
         return redirect('show_game')
     else:
         form = HandleForm()
-    return render(request, 'blog/show_game.html',{'form': form,})
+    return render(request, 'blog/show_game.html',{'form': form,'games': games})

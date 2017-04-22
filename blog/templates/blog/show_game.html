@@ -43,9 +43,9 @@
        <h3>우승 : Martian</h3>
        <h3>준우승 : king7282</h3>
     </div>
-    <button onclick = "location.href = '{% url 'add_problem'%}' "
+    <button onclick = "location.href = '{% url 'add_problem' pk=games.pk %}' "
      class="save btn btn-default">게임 수정</button>
-    <button onclick = "location.href = '{% url 'problem_game'%}' "
+    <button onclick = "location.href = '{% url 'problem_game' %}' "
      class="save btn btn-default" > 게임 목록으로 </button>
 
   {% endblock content %}
