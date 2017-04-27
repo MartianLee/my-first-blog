@@ -94,9 +94,6 @@ class Gamesetproblem(models.Model):
     problem = models.IntegerField()
     language = models.TextField()
 
-    def save():
-        a=a
-
     class Meta:
         #managed = False
         db_table = 'gamesetProblem'

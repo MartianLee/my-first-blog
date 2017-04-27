@@ -4,36 +4,19 @@
 
     <div id="game_info">
       <h1>Show Game</h1>
-      <h2>게임 1</h2>
+      <h2>게임 {{games.gameset}}</h2>
       <table>
+        {% for i in rule_size %}
         <tr>
-          <td>1</td>
-          <td>2</td>
-          <td class="solved">3</td>
-          <td>4</td>
+          {% for j in rule_size %}
+            <td>{{i}} {{j}}</td>
+          {% endfor %}
         </tr>
-        <tr>
-            <td class="solved">5</td>
-            <td class="solved">6</td>
-            <td class="solved">7</td>
-            <td class="solved">8</td>
-        </tr>
-        <tr>
-            <td>9</td>
-            <td>10</td>
-            <td class="solved">11</td>
-            <td>12</td>
-        </tr>
-        <tr>
-            <td>13</td>
-            <td>14</td>
-            <td class="solved">15</td>
-            <td>16</td>
-        </tr>
+        {% endfor %}
       </table>
       <p id="time_left">3시간 50분 남음</p>
       <h2> 기간 </h2>
-      16/12/24 8시 ~ 16.12.25 8시
+      {{games.start_date}} ~ {{games.start_date}}
       <h2> 참가자 </h2>
       <a href="#">Martian</a>, king7282, choiking10
       <h2> 보상 </h2>
@@ -43,6 +26,7 @@
        <h3>우승 : Martian</h3>
        <h3>준우승 : king7282</h3>
     </div>
+
     <button onclick = "location.href = '{% url 'add_problem' pk=games.pk %}' "
      class="save btn btn-default">게임 수정</button>
     <button onclick = "location.href = '{% url 'problem_game' %}' "

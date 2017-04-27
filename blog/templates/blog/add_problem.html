@@ -18,7 +18,7 @@
               <td> {{ prob.rule_num }} </td>
               <td> {{ prob.problem }} </td>
               <td> {{ prob.language }} </td>
-              <td><a href="#" class="top-menu"><span class="glyphicon glyphicon-minus"></span></a>
+              <td><a href="{% url 'remove_problem' pk=game.pk rule=prob.rule_num %}" class="top-menu"><span class="glyphicon glyphicon-minus"></span></a>
               </td>
           </tr>
         {% endfor %}
